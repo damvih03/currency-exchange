@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "1700cfcf-c9e6-441b-b126-cd93555b4970",
+		"name": "currency-exchange-rest-api",
+		"description": "HTTP requests for testing api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33478582"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/exchangeRates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/exchangeRates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchangeRates"
+					]
+				},
+				"description": "Получить список обменных курсов"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/currencies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/currencies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"currencies"
+					]
+				},
+				"description": "Получить список валют"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/currencies",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "code",
+							"value": "VND",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Vietnamese đồng",
+							"type": "text"
+						},
+						{
+							"key": "sign",
+							"value": "₫",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/currencies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"currencies"
+					]
+				},
+				"description": "Добавить валюту"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/exchange?from=USD&to=RUB&amount=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/exchange?from=USD&to=RUB&amount=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "USD"
+						},
+						{
+							"key": "to",
+							"value": "RUB"
+						},
+						{
+							"key": "amount",
+							"value": "2"
+						}
+					]
+				},
+				"description": "Конвертировать валюту"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/currency/USD",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/currency/USD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"currency",
+						"USD"
+					]
+				},
+				"description": "Получить конкретную валюту"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/exchangeRates?baseCurrencyCode=USD&targetCurrencyCode=VND&rate=25420.0",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "baseCurrencyCode",
+							"value": "USD",
+							"type": "text"
+						},
+						{
+							"key": "targetCurrencyCode",
+							"value": "VND",
+							"type": "text"
+						},
+						{
+							"key": "rate",
+							"value": "25420.0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/exchangeRates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchangeRates"
+					]
+				},
+				"description": "Добавить обменный курс"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/exchangeRate/USDRUB",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "rate",
+							"value": "87.43",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/exchangeRate/USDRUB",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchangeRate",
+						"USDRUB"
+					]
+				},
+				"description": "Редактировать обменный курс"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/exchangeRate/USDRUB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/exchangeRate/USDRUB",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchangeRate",
+						"USDRUB"
+					]
+				},
+				"description": "Получить конкретный обменный курс\r\n"
+			},
+			"response": []
+		}
+	]
+}
