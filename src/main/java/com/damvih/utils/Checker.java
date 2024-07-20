@@ -9,7 +9,6 @@ import java.util.Currency;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-// TODO: Check regular expression
 public class Checker {
 
     private static final String INVALID_CODE = "Currency code must be in ISO 4217 format";
